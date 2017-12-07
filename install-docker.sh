@@ -1,6 +1,6 @@
-apt-get remove -y docker docker-engine docker.io
-apt-get update 
-apt-get install -y \
+apt-get -y remove docker docker-engine docker.io
+apt-get update
+apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -12,6 +12,8 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 apt-get update
-apt-get install -y docker-ce
-apt-get update
-apt-get dist-update
+apt-get -y install docker-ce
+apt-get -y upgrade
+apt-get -y dist-upgrade
+apt-get clean
+apt-get autoclean
